@@ -17,9 +17,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.team1157.commands.ExampleCommand;
 import frc.team1157.subsystems.DriveTrain;
-import frc.team1157.subsystems.ExampleSubsystem;
+import frc.team1157.subsystems.LEDStrip;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,9 +31,9 @@ import frc.team1157.subsystems.ExampleSubsystem;
 public class Robot extends TimedRobot {
 
     public static final DriveTrain driveTrain = new DriveTrain();
+    public static final LEDStrip ledStrip = new LEDStrip();
     public static final ADXRS450_Gyro gyro = new ADXRS450_Gyro();
 
-    public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static OI oi;
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
@@ -47,12 +46,12 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
         oi = new OI();
-        chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
-        SmartDashboard.putData("Auto mode", chooser);
-        UsbCamera camera0 = CameraServer.getInstance().startAutomaticCapture(0);
+
+        UsbCamera camera0 = CameraServer.getInstance().startAutomaticCapture();
         VideoSink videoServer = CameraServer.getInstance().getServer();
         videoServer.setSource(camera0);
+        SmartDashboard.putString("Test", "working");
         LiveWindow.addSensor("Gyro", 0, gyro);
     }
 
@@ -125,7 +124,8 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
         double gyroAngle = gyro.getAngle();
-        SmartDashboard.putNumber("gyroAngle",gyroAngle);
+        SmartDashboard.putNumber("Gyro", gyroAngle);
+        //SmartDashboard.putNumber("gyroAngle",gyroAngle);
         Scheduler.getInstance().run();
     }
 

@@ -4,6 +4,7 @@ package frc.team1157.subsystems;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team1157.RobotMap;
+import frc.team1157.commands.controlLED;
 
 public class LEDStrip extends Subsystem {
 
@@ -16,14 +17,14 @@ public class LEDStrip extends Subsystem {
 
 
     public void setStrip(double red, double green, double blue) {
-        redLED.set(red/255.0);
-        greenLED.set(green/255.0);
-        blueLED.set(blue/255.0);
+        redLED.set(red / 255.0);
+        greenLED.set(green / 255.0);
+        blueLED.set(blue / 255.0);
     }
 
     public void initDefaultCommand() {
-        // TODO: Set the default command, if any, for a subsystem here. Example:
-        //    setDefaultCommand(new MySpecialCommand());
+
+        setDefaultCommand(new controlLED());
     }
 
 

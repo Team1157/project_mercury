@@ -21,10 +21,10 @@ public class DriveTrain extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command, if any, for a subsystem here. Example:
         //    setDefaultCommand(new MySpecialCommand());
-        frontRightVictor.setSafetyEnabled(false);
-        frontLeftVictor.setSafetyEnabled(false);
-        backLeftVictor.setSafetyEnabled(false);
-        backRightVictor.setSafetyEnabled(false);
+        frontRightVictor.setExpiration(.1);
+        frontLeftVictor.setExpiration(.1);
+        backLeftVictor.setExpiration(.1);
+        backRightVictor.setExpiration(.1);
         super.setDefaultCommand(new JoystickMecanum());
     }
 

@@ -42,6 +42,7 @@ public class JoystickMecanum extends Command {
         SmartDashboard.putNumber("T", OI.stick0.getThrottle());
         SmartDashboard.putNumber("sd", speedDamp);
         SmartDashboard.putNumber("td", twistDamp);
+        SmartDashboard.putNumber("gyroAngle",Robot.gyro.getAngle());
         if (Math.abs(OI.stick0.getTwist()) > 0.15 || Math.abs(OI.stick0.getX()) > 0.15 || Math.abs(
                 OI.stick0.getY()) > 0.15) {
             double dx = OI.stick0.getX() * speedDamp;
