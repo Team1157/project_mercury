@@ -7,13 +7,13 @@
 
 package frc.team1157;
 
-import edu.wpi.cscore.UsbCamera;
-import edu.wpi.cscore.VideoSink;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
+import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -37,6 +37,7 @@ public class Robot extends TimedRobot {
     public static OI oi;
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
+    private long lastTime = 0;
 
 
     /**
@@ -48,11 +49,21 @@ public class Robot extends TimedRobot {
         oi = new OI();
         // chooser.addObject("My Auto", new MyAutoCommand());
 
-        UsbCamera camera0 = CameraServer.getInstance().startAutomaticCapture();
-        VideoSink videoServer = CameraServer.getInstance().getServer();
-        videoServer.setSource(camera0);
+        CameraServer.getInstance().startAutomaticCapture();
         SmartDashboard.putString("Test", "working");
         LiveWindow.addSensor("Gyro", 0, gyro);
+    }
+
+    @Override
+    public void robotPeriodic() {
+        long time = System.currentTimeMillis();
+        SmartDashboard.putNumber("UPS", 1000 / (time - lastTime));
+        lastTime = time;
+        Accelerometer a = new BuiltInAccelerometer();
+        SmartDashboard.putNumber("Accel X", a.getX());
+        SmartDashboard.putNumber("Accel Y", a.getY());
+        SmartDashboard.putNumber("Accel Z", a.getZ());
+
     }
 
     /**
