@@ -22,9 +22,11 @@ public class RobotMap {
     public static int frontLeftMotor = 1;
     public static int backRightMotor = 2;
     public static int backLeftMotor = 3;
-    public static int red = 4;
-    public static int green = 5;
-    public static int blue = 6;
+    public static int cameraPitch = 4;
+    public static int cameraYaw = 5;
+    public static int red = 6;
+    public static int green = 7;
+    public static int blue = 8;
 
 
     // If you are using multiple modules, make sure to define both the port

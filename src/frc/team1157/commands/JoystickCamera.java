@@ -1,20 +1,16 @@
 package frc.team1157.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.team1157.OI;
 import frc.team1157.Robot;
 
 
-public class JoystickMecanum extends Command {
+public class JoystickCamera extends Command {
 
-    double twistDamp = 6.0;
-    double speedDamp = 1.0;
+    private double throttle = 0;
 
-    public JoystickMecanum() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-        requires(Robot.driveTrain);
+    public JoystickCamera() {
+        requires(Robot.cameraMount);
     }
 
 
@@ -34,22 +30,11 @@ public class JoystickMecanum extends Command {
      */
     @Override
     protected void execute() {
-        speedDamp = (OI.stick0.getThrottle() - 1) / -2;
-        twistDamp = speedDamp * .6;
-        SmartDashboard.putNumber("X", OI.stick0.getX());
-        SmartDashboard.putNumber("Y", OI.stick0.getY());
-        SmartDashboard.putNumber("Z", OI.stick0.getTwist());
-        SmartDashboard.putNumber("T", OI.stick0.getThrottle());
-        SmartDashboard.putNumber("sd", speedDamp);
-        SmartDashboard.putNumber("td", twistDamp);
-        SmartDashboard.putNumber("gyroAngle", Robot.gyro.getAngle());
-        if (Math.abs(OI.stick0.getTwist()) > 0.15 || Math.abs(OI.stick0.getX()) > 0.15 || Math.abs(
-                OI.stick0.getY()) > 0.15) {
-            double dx = OI.stick0.getX() * speedDamp;
-            double dy = OI.stick0.getY() * speedDamp;
-            double twist = OI.stick0.getTwist() * twistDamp;
-            dx *= (OI.stick0.getTrigger()) ? 0 : 1;
-            Robot.driveTrain.DriveMech(dx, dy, twist, Robot.gyro.getAngle());
+        Robot.cameraMount.yawMotor.set((OI.stick1.getTwist() / 2) + .5);
+        Robot.cameraMount.pitchMotor.set((OI.stick1.getY() / 2) + .5);
+        if ((int) OI.stick1.getThrottle() != (int) throttle) {
+            throttle = OI.stick1.getThrottle();
+            Robot.camera0.setBrightness((int) (100.0 * throttle));
         }
     }
 
@@ -86,7 +71,7 @@ public class JoystickMecanum extends Command {
      */
     @Override
     protected void end() {
-        Robot.driveTrain.stop();
+        Robot.cameraMount.stop();
     }
 
 
@@ -106,6 +91,6 @@ public class JoystickMecanum extends Command {
      */
     @Override
     protected void interrupted() {
-        Robot.driveTrain.stop();
+        Robot.cameraMount.stop();
     }
 }

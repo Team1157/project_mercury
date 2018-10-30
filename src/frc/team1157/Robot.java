@@ -7,6 +7,7 @@
 
 package frc.team1157;
 
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -17,6 +18,7 @@ import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team1157.subsystems.CameraMount;
 import frc.team1157.subsystems.DriveTrain;
 import frc.team1157.subsystems.LEDStrip;
 
@@ -32,7 +34,10 @@ public class Robot extends TimedRobot {
 
     public static final DriveTrain driveTrain = new DriveTrain();
     public static final LEDStrip ledStrip = new LEDStrip();
+    public static final CameraMount cameraMount = new CameraMount();
     public static final ADXRS450_Gyro gyro = new ADXRS450_Gyro();
+    public static final CameraServer cameraServer = CameraServer.getInstance();
+    public static final UsbCamera camera0 = cameraServer.startAutomaticCapture();
 
     public static OI oi;
     private Command autonomousCommand;
@@ -49,7 +54,6 @@ public class Robot extends TimedRobot {
         oi = new OI();
         // chooser.addObject("My Auto", new MyAutoCommand());
 
-        CameraServer.getInstance().startAutomaticCapture();
         SmartDashboard.putString("Test", "working");
         LiveWindow.addSensor("Gyro", 0, gyro);
     }
