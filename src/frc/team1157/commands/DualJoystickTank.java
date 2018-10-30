@@ -6,12 +6,12 @@ import frc.team1157.OI;
 import frc.team1157.Robot;
 
 
-public class JoystickMecanum extends Command {
+public class DualJoystickTank extends Command {
 
-    double twistDamp = 6.0;
-    double speedDamp = 1.0;
+    double speedDampL = 1.0;
+    double speedDampR = 1.0;
 
-    public JoystickMecanum() {
+    public DualJoystickTank() {
         requires(Robot.driveTrain);
     }
 
@@ -32,22 +32,18 @@ public class JoystickMecanum extends Command {
      */
     @Override
     protected void execute() {
-        speedDamp = (OI.stick0.getThrottle() - 1) / -2;
-        twistDamp = speedDamp * .6;
-        SmartDashboard.putNumber("X", OI.stick0.getX());
+        speedDampL = (OI.stick1.getThrottle() - 1) / -2;
+        speedDampR = (OI.stick0.getThrottle() - 1) / -2;
+        SmartDashboard.putNumber("Y1", OI.stick1.getY());
         SmartDashboard.putNumber("Y", OI.stick0.getY());
-        SmartDashboard.putNumber("Z", OI.stick0.getTwist());
-        SmartDashboard.putNumber("T", OI.stick0.getThrottle());
-        SmartDashboard.putNumber("sd", speedDamp);
-        SmartDashboard.putNumber("td", twistDamp);
         SmartDashboard.putNumber("gyroAngle", Robot.gyro.getAngle());
-        if (Math.abs(OI.stick0.getTwist()) > 0.15 || Math.abs(OI.stick0.getX()) > 0.15 || Math.abs(
-                OI.stick0.getY()) > 0.15) {
-            double dx = OI.stick0.getX() * speedDamp;
-            double dy = OI.stick0.getY() * speedDamp;
-            double twist = OI.stick0.getTwist() * twistDamp;
-            dx *= (OI.stick0.getTrigger()) ? 0 : 1;
-            Robot.driveTrain.DriveMech(dx, dy, twist, Robot.gyro.getAngle());
+        if (Math.abs(OI.stick1.getY()) > 0.15 || Math.abs(OI.stick0.getY()) > 0.15) {
+            double r = OI.stick0.getY() * speedDampR;
+            double l = OI.stick1.getY() * speedDampL;
+            Robot.driveTrain.backLeftVictor.set(l);
+            Robot.driveTrain.frontLeftVictor.set(l);
+            Robot.driveTrain.backRightVictor.set(r);
+            Robot.driveTrain.frontRightVictor.set(r);
         }
     }
 

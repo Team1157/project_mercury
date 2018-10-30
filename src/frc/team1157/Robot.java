@@ -40,10 +40,10 @@ public class Robot extends TimedRobot {
     public static final UsbCamera camera0 = cameraServer.startAutomaticCapture();
 
     public static OI oi;
+    Accelerometer a = new BuiltInAccelerometer();
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
     private long lastTime = 0;
-
 
     /**
      * This function is run when the robot is first started up and should be
@@ -63,7 +63,6 @@ public class Robot extends TimedRobot {
         long time = System.currentTimeMillis();
         SmartDashboard.putNumber("UPS", 1000 / (time - lastTime));
         lastTime = time;
-        Accelerometer a = new BuiltInAccelerometer();
         SmartDashboard.putNumber("Accel X", a.getX());
         SmartDashboard.putNumber("Accel Y", a.getY());
         SmartDashboard.putNumber("Accel Z", a.getZ());

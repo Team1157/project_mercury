@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="377f144d-be85-4a11-b46c-fae5da01b67c" name="Default" comment="Initial">
+      <change afterPath="$PROJECT_DIR$/src/frc/team1157/commands/DualJoystickTank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frc/team1157/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frc/team1157/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frc/team1157/commands/ExampleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frc/team1157/commands/controlLED.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frc/team1157/subsystems/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frc/team1157/subsystems/DriveTrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frc/team1157/subsystems/ExampleSubsystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frc/team1157/subsystems/LEDStrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frc/team1157/subsystems/LEDStrip.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,7 +18,7 @@
     <session id="56393886">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="3" />
@@ -36,23 +33,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="16" />
+          <entry key="java" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="16" />
+          <entry key="JAVA" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3523" />
+          <entry key="java" value="3622" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3523" />
+          <entry key="JAVA" value="3622" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
@@ -61,24 +58,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frc/team1157/RobotMap.java">
+        <entry file="file://$PROJECT_DIR$/src/frc/team1157/OI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="136">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/frc/team1157/Robot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="84" column="34" lean-forward="true" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+            <state relative-caret-position="68">
+              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
               <folding>
-                <element signature="docComment;class#Robot#0" />
+                <element signature="method#disabledInit#0;class#Robot#0" />
                 <element signature="docComment;method#autonomousInit#0;class#Robot#0" />
+                <element signature="method#autonomousInit#0;class#Robot#0" />
                 <element signature="method#teleopInit#0;class#Robot#0" />
                 <element signature="docComment;method#teleopPeriodic#0;class#Robot#0" />
+                <element signature="method#teleopPeriodic#0;class#Robot#0" />
                 <element signature="docComment;method#testPeriodic#0;class#Robot#0" />
                 <element signature="method#testPeriodic#0;class#Robot#0" />
               </folding>
@@ -86,58 +85,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frc/team1157/subsystems/LEDStrip.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/DualJoystickTank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+            <state relative-caret-position="459">
+              <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frc/team1157/subsystems/DriveTrain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/controlLED.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frc/team1157/OI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#initialize#0;class#JoystickMecanum#0" />
+                <element signature="docComment;method#isFinished#0;class#JoystickMecanum#0" />
+                <element signature="method#isFinished#0;class#JoystickMecanum#0" />
+                <element signature="docComment;method#end#0;class#JoystickMecanum#0" />
+                <element signature="docComment;method#interrupted#0;class#JoystickMecanum#0" />
               </folding>
             </state>
           </provider>
@@ -166,11 +125,12 @@
         <option value="$PROJECT_DIR$/src/frc/team1157/commands/fadeLED.java" />
         <option value="$PROJECT_DIR$/src/frc/team1157/commands/controllLED.java" />
         <option value="$PROJECT_DIR$/src/frc/team1157/RobotMap.java" />
-        <option value="$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java" />
         <option value="$PROJECT_DIR$/src/frc/team1157/subsystems/LEDStrip.java" />
         <option value="$PROJECT_DIR$/src/frc/team1157/commands/controlLED.java" />
         <option value="$PROJECT_DIR$/src/frc/team1157/subsystems/DriveTrain.java" />
         <option value="$PROJECT_DIR$/src/frc/team1157/Robot.java" />
+        <option value="$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java" />
+        <option value="$PROJECT_DIR$/src/frc/team1157/commands/DualJoystickTank.java" />
       </list>
     </option>
   </component>
@@ -272,6 +232,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -313,7 +274,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,6 +281,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="frc.team1157" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -404,7 +369,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17697228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -424,8 +389,32 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info active="true" anchor="right" id="Messages" order="5" sideWeight="0.67322236" visible="true" weight="0.13272922" />
+      <window_info anchor="right" id="Messages" order="5" sideWeight="0.67322236" visible="true" weight="0.13272922" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18070363" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="FRC" order="7" sideWeight="0.60287446" weight="0.198036" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.32753405" side_tool="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Floobits" order="11" weight="0.27952328" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.15351813" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.32995737" />
+      <window_info active="true" anchor="right" id="Messages" order="5" sideWeight="0.67322236" visible="true" weight="0.2859304" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -457,13 +446,6 @@
     <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/LEDActions.java" />
     <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/ExampleCommand.java" />
     <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/fadeLED.java" />
-    <entry file="file://$PROJECT_DIR$/src/frc/team1157/RobotMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/frc/team1157/subsystems/LEDStrip.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -484,23 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frc/team1157/OI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/frc/team1157/subsystems/DriveTrain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -511,17 +476,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/frc/team1157/Robot1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-833">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frc/team1157/OI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frc/team1157/RobotMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/frc/team1157/Robot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="84" column="34" lean-forward="true" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
+        <state relative-caret-position="68">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
-            <element signature="docComment;class#Robot#0" />
+            <element signature="method#disabledInit#0;class#Robot#0" />
             <element signature="docComment;method#autonomousInit#0;class#Robot#0" />
+            <element signature="method#autonomousInit#0;class#Robot#0" />
             <element signature="method#teleopInit#0;class#Robot#0" />
             <element signature="docComment;method#teleopPeriodic#0;class#Robot#0" />
+            <element signature="method#teleopPeriodic#0;class#Robot#0" />
             <element signature="docComment;method#testPeriodic#0;class#Robot#0" />
             <element signature="method#testPeriodic#0;class#Robot#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/JoystickMecanum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frc/team1157/commands/DualJoystickTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="44" column="52" selection-start-line="44" selection-start-column="52" selection-end-line="44" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#initialize#0;class#JoystickMecanum#0" />
+            <element signature="docComment;method#isFinished#0;class#JoystickMecanum#0" />
+            <element signature="method#isFinished#0;class#JoystickMecanum#0" />
+            <element signature="docComment;method#end#0;class#JoystickMecanum#0" />
+            <element signature="docComment;method#interrupted#0;class#JoystickMecanum#0" />
           </folding>
         </state>
       </provider>
