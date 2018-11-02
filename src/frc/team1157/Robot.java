@@ -18,6 +18,8 @@ import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.team1157.commands.DualJoystickTank;
+import frc.team1157.commands.JoystickMecanum;
 import frc.team1157.subsystems.CameraMount;
 import frc.team1157.subsystems.DriveTrain;
 import frc.team1157.subsystems.LEDStrip;
@@ -38,11 +40,13 @@ public class Robot extends TimedRobot {
     public static final ADXRS450_Gyro gyro = new ADXRS450_Gyro();
     public static final CameraServer cameraServer = CameraServer.getInstance();
     public static final UsbCamera camera0 = cameraServer.startAutomaticCapture();
+    public static final UsbCamera camera1 = cameraServer.startAutomaticCapture();
 
     public static OI oi;
     Accelerometer a = new BuiltInAccelerometer();
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
+    private SendableChooser<Command> teleopMode = new SendableChooser<>();
     private long lastTime = 0;
 
     /**
@@ -66,7 +70,6 @@ public class Robot extends TimedRobot {
         SmartDashboard.putNumber("Accel X", a.getX());
         SmartDashboard.putNumber("Accel Y", a.getY());
         SmartDashboard.putNumber("Accel Z", a.getZ());
-
     }
 
     /**
@@ -122,10 +125,6 @@ public class Robot extends TimedRobot {
 
     @Override
     public void teleopInit() {
-        // This makes sure that the autonomous stops running when
-        // teleop starts running. If you want the autonomous to
-        // continue until interrupted by another command, remove
-        // this line or comment it out.
         if (autonomousCommand != null) {
             autonomousCommand.cancel();
         }

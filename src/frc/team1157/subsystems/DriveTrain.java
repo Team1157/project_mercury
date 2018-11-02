@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import frc.team1157.RobotMap;
+import frc.team1157.commands.DualJoystickTank;
 import frc.team1157.commands.JoystickMecanum;
 
 
@@ -16,16 +17,15 @@ public class DriveTrain extends Subsystem {
     public Victor backRightVictor = new Victor(RobotMap.backRightMotor);
     public Victor backLeftVictor = new Victor(RobotMap.backLeftMotor);
     public MecanumDrive mecanumDrive = new MecanumDrive(frontLeftVictor, backLeftVictor, frontRightVictor,
-            backRightVictor);
+                                                        backRightVictor);
 
     public void initDefaultCommand() {
-        // Set the default command, if any, for a subsystem here. Example:
-        //    setDefaultCommand(new MySpecialCommand());
         frontRightVictor.setExpiration(.1);
         frontLeftVictor.setExpiration(.1);
         backLeftVictor.setExpiration(.1);
         backRightVictor.setExpiration(.1);
-        super.setDefaultCommand(new JoystickMecanum());
+        //setDefaultCommand(new DualJoystickTank());
+        setDefaultCommand(new JoystickMecanum());
     }
 
     public void DriveMech(double x, double y, double rotation, double gyro) {

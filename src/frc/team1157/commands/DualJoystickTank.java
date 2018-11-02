@@ -38,7 +38,7 @@ public class DualJoystickTank extends Command {
         SmartDashboard.putNumber("Y", OI.stick0.getY());
         SmartDashboard.putNumber("gyroAngle", Robot.gyro.getAngle());
         if (Math.abs(OI.stick1.getY()) > 0.15 || Math.abs(OI.stick0.getY()) > 0.15) {
-            double r = OI.stick0.getY() * speedDampR;
+            double r = OI.stick0.getY() * speedDampR * -1;
             double l = OI.stick1.getY() * speedDampL;
             Robot.driveTrain.backLeftVictor.set(l);
             Robot.driveTrain.frontLeftVictor.set(l);
