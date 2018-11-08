@@ -30,13 +30,15 @@ public class JoystickCamera extends Command {
      */
     @Override
     protected void execute() {
-        Robot.cameraMount.yawMotor.set((-OI.stick1.getTwist() / 4) + .5 - .1);
+        Robot.cameraMount.yawMotor.set((-OI.stick1.getTwist() / 3) + .5 - .1);
         Robot.cameraMount.pitchMotor.set((OI.stick1.getY() / 4) + .5);
 
         if ((int) OI.stick1.getThrottle() != (int) throttle) {
             throttle = OI.stick1.getThrottle();
             Robot.camera0.setBrightness((int) (100.0 * throttle));
             Robot.camera1.setBrightness((int) (100.0 * throttle));
+            Robot.camera2.setBrightness((int) (100.0 * throttle));
+            Robot.camera3.setBrightness((int) (100.0 * throttle));
         }
     }
 

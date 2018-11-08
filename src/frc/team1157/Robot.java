@@ -41,6 +41,8 @@ public class Robot extends TimedRobot {
     public static final CameraServer cameraServer = CameraServer.getInstance();
     public static final UsbCamera camera0 = cameraServer.startAutomaticCapture();
     public static final UsbCamera camera1 = cameraServer.startAutomaticCapture();
+    public static final UsbCamera camera2 = cameraServer.startAutomaticCapture();
+    public static final UsbCamera camera3 = cameraServer.startAutomaticCapture();
 
     public static OI oi;
     Accelerometer a = new BuiltInAccelerometer();

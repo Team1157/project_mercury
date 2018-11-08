@@ -43,8 +43,8 @@ public class JoystickMecanum extends Command {
         SmartDashboard.putNumber("gyroAngle", Robot.gyro.getAngle());
         if (Math.abs(OI.stick0.getTwist()) > 0.15 || Math.abs(OI.stick0.getX()) > 0.15 || Math.abs(
                 OI.stick0.getY()) > 0.15) {
-            double dx = OI.stick0.getX() * speedDamp;
-            double dy = OI.stick0.getY() * speedDamp;
+            double dx = -OI.stick0.getX() * speedDamp;
+            double dy = -OI.stick0.getY() * speedDamp;
             double twist = OI.stick0.getTwist() * twistDamp;
             dx *= (OI.stick0.getTrigger()) ? 0 : 1;
             Robot.driveTrain.DriveMech(dx, dy, twist, Robot.gyro.getAngle());
