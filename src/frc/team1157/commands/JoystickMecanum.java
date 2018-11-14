@@ -11,9 +11,9 @@ public class JoystickMecanum extends Command {
     double twistDamp = 6.0;
     double speedDamp = 1.0;
     double dir = -1;
+    boolean btn = false;
 
-    public JoystickMecanum(double d) {
-        dir;
+    public JoystickMecanum() {
         requires(Robot.driveTrain);
     }
 
@@ -34,6 +34,12 @@ public class JoystickMecanum extends Command {
      */
     @Override
     protected void execute() {
+        if (OI.stick0.getRawButton(2)) {
+            if (!btn) {
+                dir *= -1;
+                btn = true;
+            }
+        } else btn = false;
         speedDamp = (OI.stick0.getThrottle() - 1) / -2;
         twistDamp = speedDamp * .6;
         SmartDashboard.putNumber("X", OI.stick0.getX());
@@ -43,7 +49,7 @@ public class JoystickMecanum extends Command {
         SmartDashboard.putNumber("sd", speedDamp);
         SmartDashboard.putNumber("td", twistDamp);
         SmartDashboard.putNumber("gyroAngle", Robot.gyro.getAngle());
-        SmartDashboard.putString("Direction", (dir>0)?"Backwards":"Forwards");
+        SmartDashboard.putString("Direction", (dir > 0) ? "Backwards" : "Forwards");
         if (Math.abs(OI.stick0.getTwist()) > 0.15 || Math.abs(OI.stick0.getX()) > 0.15 || Math.abs(
                 OI.stick0.getY()) > 0.15) {
             double dx = dir * OI.stick0.getX() * speedDamp;

@@ -10,6 +10,7 @@ package frc.team1157;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.team1157.commands.JoystickMecanum;
 
 /**
@@ -29,11 +30,7 @@ public class OI {
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
-    Button b = new JoystickButton(stick0, 1);
 
-    OI() {
-        b.whenPressed(new JoystickMecanum());
-    }
     //// TRIGGERING COMMANDS WITH BUTTONS
     // Once you have a button, it's trivial to bind it to a button in one of
     // three ways:

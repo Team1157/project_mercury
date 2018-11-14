@@ -50,7 +50,6 @@ public class Robot extends TimedRobot {
     private SendableChooser<Command> chooser = new SendableChooser<>();
     private SendableChooser<Command> teleopMode = new SendableChooser<>();
     private long lastTime = 0;
-    public double dir = -1;
 
     /**
      * This function is run when the robot is first started up and should be
